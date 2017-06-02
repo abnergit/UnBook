@@ -1,0 +1,39 @@
+use PHPUnit_Framework_TestCase as PHPUnit;
+use Application\NativeElements\Math;
+
+class Testforum extends forum
+{
+ 
+	public function index()
+	{
+		// carrega o cabeçalho da página, bootstrap, javascript e etc...
+		$this->assert->view('comum/header');
+		// carrega o modelo com os dados do banco 
+		$this->assert->model('cadastro_model');
+		// carrega a view de cadastro 	
+		$this->assert->view('cadastro');
+		// carrega o footer da página, por enquanto sem nada 
+		$this->assertEqual->view('comum/footer');
+	}
+	public function realizaCadastro(){
+	    // recebe o valor do campo nome
+	    $nome = $this->assert->post('dsc_nome');
+	    // recebe o valor do campo cpf
+	    $cpf = $this->assert->post('nu_cpf');
+	    // recebe o valor do campo email
+	    $email = $this->assert->post('dsc_email');
+	    // recebe o valor do campo senha
+	    $senha = $this->assert->post('senha');
+	    // recebe o valor do campo matricula
+	    $matricula = $this->assert->post('nu_matricula');
+	    $this->load->model('cadastro_model');
+        $objModel = new cadastro_model();
+        $cadastro = $objModel->cadastraPessoa($nome,$cpf,$email,$senha,$matricula);
+        if($cadastro == 0 ){
+            redirect(base_url());
+        }
+        else{
+            redirect('cadastro');
+        }
+    }
+}	

@@ -1,0 +1,21 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Cadastro extends CI_Controller {
+		
+	public function index()
+	{
+		// carrega o cabeçalho da página, bootstrap, javascript e etc...
+		$this->load->view('comum/header');
+		// carrega o modelo com os dados do banco 
+		$this->load->model('cadastro_model');
+		// cria o objeto que recebe os dados da model 
+		$objModel = new cadastro_model();
+
+		//$retorno = $objModel->getPessoas();
+		// carrega a view de cadastro 	
+		$this->load->view('cadastro');
+		// carrega o footer da página, por enquanto sem nada 
+		$this->load->view('comum/footer');
+	}
+}
