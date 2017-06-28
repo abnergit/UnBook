@@ -2,7 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cadastro extends CI_Controller {
-		
+
+    public function __construct()
+    {
+        parent::__construct();
+        // Carrega a biblioteca de teste
+        $this->load->library('unit_test');
+        // Carrega o model de cadastro
+        $this->load->model('cadastro_model');
+    }
+    
 	public function index()
 	{
 		// carrega o cabeçalho da página, bootstrap, javascript e etc...
@@ -27,7 +36,6 @@ class Cadastro extends CI_Controller {
 	    // recebe o valor do campo matricula
 	    $matricula = $this->input->post('nu_matricula');
 
-	    $this->load->model('cadastro_model');
 
         $objModel = new cadastro_model();
         $cadastro = $objModel->cadastraPessoa($nome,$cpf,$email,$senha,$matricula);
@@ -38,5 +46,21 @@ class Cadastro extends CI_Controller {
             redirect('cadastro');
         }
     }
+    /* Como executar a função de teste
+        1 - Vá ao terminal e navegue até o diretorio da pasta /projeto
+        2 - Execute o comando php index.php <nome_da_classe> <nome_da_funçao_de_teste>
+        Ex: php index.php Cadastro realizaCadastroTeste
+    */
+    public function realizaCadastroTeste(){
+	    // Testa a função cadastraPessoa que retorna 0 se cadastramos um cpf que não existe no banco
+        $objModel = new cadastro_model();
+        $test = $objModel->cadastraPessoa('Luiz','04274488161','lp.lobofilho@gmail.com','algumaSenha' ,12000);
+        $expected_result = 0  ;
+        $test_name = 'Cadastrar novo usuário no banco';
+        $str_template = 'ITEM | DESCRIÇÃO'.PHP_EOL.'{rows}{item} | {result}'.PHP_EOL.'{/rows}';
+        $this->unit->set_template($str_template);
+        echo $this->unit->run($test, $expected_result, $test_name);
+    }
+
 
 }

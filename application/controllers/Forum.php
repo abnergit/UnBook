@@ -18,5 +18,24 @@ class Forum  extends CI_Controller {
         // carrega o footer da página, por enquanto sem nada
         $this->load->view('comum/footer');
     }
+    public function cadastrarForum () {
+        $titulo = $this->input->post('inputTituloForum');
+        $descricao = $this->input->post('inputDscForum');
+        $this->load->model('forum_model');
+        $objModel = new forum_model();
+        $return = $objModel->insertForum($titulo,$descricao);
+        if($return == 0 ){
+            redirect('/forum');
+        }
+    }
+    public function deletarForum(){
+        $idforum = $this->input->get('id');
+        print_r($idforum);
+        $this->load->model('forum_model');
+        // cria o objeto que recebe os dados da model
+        $objModel = new forum_model();
+        $objModel->deleteForum($idforum);
+        redirect('/forum');
 
+    }
 }

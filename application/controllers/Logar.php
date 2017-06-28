@@ -59,8 +59,5 @@ class Logar extends CI_Controller {
 		// carrega o footer da página, por enquanto sem nada
 		$this->load->view('comum/footer');
 	}
-
-	
-
 }
 ?>
