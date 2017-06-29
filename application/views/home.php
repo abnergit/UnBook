@@ -2,7 +2,6 @@
     <div class="cd-content">
         <div class="Container">
             <div class="Content">
-                <div class="hidden-md-down">
                 <br/><br/>
                 <br/><br/>
                 <br/><br/>
@@ -23,7 +22,7 @@
                 <br/><br/>
                 <br/><br/>
                 <br/><br/>
-                <br/><br/></div>
+                <br/><br/>
                 <h1>UnBook</h1>
             </div>
         </div>
