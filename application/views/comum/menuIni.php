@@ -4,11 +4,13 @@
         $("#nu_cpf").mask("999.999.999-99");
     });
     </script>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
 
         <ul class="nav navbar-nav">
-            <li class="active"><a href=# >Inicio</a></li>
+            <li class="active"><a href=#page-top >Inicio</a></li>
             <li><a class="page-scroll" href="#sobre">Sobre</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
