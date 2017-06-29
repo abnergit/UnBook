@@ -7,4 +7,12 @@ class Home_model extends CI_Model {
 	{
 		return $this->db->get('pessoa')->result();
 	}
+
+	public function getPessoa($email)
+    {
+        $this->db->select('*');
+        $this->db->from('pessoa');
+        return $this->db->where('dsc_email',$email);
+
+    }
 }
