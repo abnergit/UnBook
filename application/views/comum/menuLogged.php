@@ -15,10 +15,10 @@
             <ul class="nav navbar-nav">
 
                 <li class="active"><a href='/projeto/index.php/inicio'>Inicio</a></li>
-                <li><a href='/projeto/index.php/perfil'>Meu Perfil</a></li><!--Colocar referencia para as controllers-->
-                <li><a href='/projeto/index.php/forum'>Forum</a></li>
+                <li><a href='/index.php/perfil'>Meu Perfil</a></li><!--Colocar referencia para as controllers-->
+                <li><a href='/index.php/forum'>Forum</a></li>
                 <li><a href='/avaliacao'>Avaliações Docentes</a></li>
-                <li><a href='/projeto/index.php/logar/logout'>Logout</a></li>
+                <li><a href='/index.php/logar/logout'>Logout</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
