@@ -6,7 +6,7 @@
             	<div class="well"></br>
 						<h3>Seja Bem-Vind@!</h3>
 						</br>
-						<?php 
+						<?php
 						foreach ($data as $linha)
 							?>
 						<h3>

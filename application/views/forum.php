@@ -62,30 +62,28 @@
 
     <div id="container-fluid">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-5 col-sm-offset-1">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                 <div class="well"></br>
-                    <button type="button" id="open-modal-forum-button" class="btn btn-default">Adicionar Fórum</button>
+                    <a href="#" class="btn btn-default pull-right" id="open-modal-forum-button" >
+                        <span class="glyphicon glyphicon-plus"></span> Adicionar Fórum
+                    </a>
                     <?php echo form_open( '/forum/selectForum',array( 'id'=>'forum','name'=>'forum')); ?>
                     <h3>Fórum</h3>
                     </br>
-                        <table class="table">
-                            <?php
-                                //  print_r($dados);
-                                foreach ($dados as $linha){
-                                    echo '<tr><td><a href="/projeto/index.php/forum/deletarForum?id='.$linha->idn_forum.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                    </a></td>';
-                                    echo '<td><a href ="/projeto/index.php/forum"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                    </a></td>';;
-                                    echo '<td><a href ="/projeto/index.php/mensagem?id='.$linha->idn_forum.'&forum='.$linha->dsc_titulo_forum.' " >'.$linha->dsc_titulo_forum.'</a></td></tr>';
-                                }
-                                echo form_close();
-                            ?>
-                        </table>
-                    </br></br></br>
+                    <table class="table">
+                        <?php
+                            //  print_r($dados);
+                            foreach ($dados as $linha){
+                                echo '<tr><td><h5><a href ="/projeto/index.php/mensagem?id='.$linha->idn_forum.'&forum='.$linha->dsc_titulo_forum.' " >'.$linha->dsc_titulo_forum.'</a></h5>';
+                                echo '<p>'.$linha->dsc_forum.'</p></td>';
+                              /*  echo '<td>criado por:' .$linha->dsc_nome.'</td>';*/
+                                echo '<td><a href ="/projeto/index.php/forum"><span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span>
+                                </a></td>';
+                                echo '<td><a href="/projeto/index.php/forum/deletarForum?id='.$linha->idn_forum.'"><span class="glyphicon glyphicon-trash pull-right" aria-hidden="true"></span>
+                                </a></td></tr>';} ?>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </article>
-
-
