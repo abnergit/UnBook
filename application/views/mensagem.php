@@ -39,33 +39,27 @@
 
     <div id="container-fluid">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-5 col-sm-offset-1">
                 <div class="well"></br>
-                    <a href="#" class="btn btn-default pull-right" id="open-modal-mensagem-button" >
-                        <span class="glyphicon glyphicon-plus"></span> Escrever
-                    </a>
+                    <button type="button" id="open-modal-mensagem-button" class="btn btn-default">Escrever</button>
                     <?php echo '<h3>'.$tituloForum.'</h3>'; ?>
                     </br>
-
-
-                    <table class="table">
-                        <?php
+                    <?php
                         if($mensagens == null ) {
                             echo "Não existe mensagens nesse fórum! Seja o primeiro a publicar :)";
                         }else{
                             foreach($mensagens as $mensagem){
-    //                                echo '<tr><td><a href="/projeto/index.php/forum/deletarForum?id='.$linha->idn_forum.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                echo '<tr><td>'.$mensagem['dsc_mensagem'].'</td><td style="text-align: right;">'.$mensagem['dsc_nome'].'</td></tr><br/>';
-                                echo form_close();
-
+//                                echo '<tr><td><a href="/projeto/index.php/forum/deletarForum?id='.$linha->idn_forum.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                echo '<i>'.$mensagem['dsc_nome'].'</i> diz: '.$mensagem['dsc_mensagem'].'<br/>';
                             }
-
                         }
-                        ?>
-                    </table>
+                     ?>
+                    </br></br></br>
                 </div>
             </div>
         </div>
     </div>
 
 </article>
+
+
