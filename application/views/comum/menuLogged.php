@@ -18,7 +18,7 @@
                 <li><a href='/projeto/index.php/meuPerfil'>Meu Perfil</a></li><!--Colocar referencia para as controllers-->
                 <li><a href='/projeto/index.php/forum'>Forum</a></li>
                 <li><a href='/debates'>Debates</a></li>
-                <li><a href='/avaliacao'>Avaliações Docentes</a></li>
+                <li><a href='/projeto/index.php/aval'>Avaliações Docentes</a></li>
 			 <li><a href='/projeto/index.php/logar/logout'>Logout</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
