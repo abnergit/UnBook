@@ -48,9 +48,8 @@ class Logar extends CI_Controller {
 		redirect(base_url(''));
 	}
 
-
+	
 	public function index($dados) {
-     	redirect(base_url('inicio'));
 		$this->load->library('session');
 		// carrega o cabeçalho da página, bootstrap, javascript e etc...
 		$this->load->view('comum/header');
@@ -59,6 +58,6 @@ class Logar extends CI_Controller {
 		$this->load->view('inicio', array('data'=> $dados));
 		// carrega o footer da página, por enquanto sem nada
 		$this->load->view('comum/footer');
-     }
+	}
 }
 ?>
